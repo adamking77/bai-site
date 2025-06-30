@@ -5,6 +5,7 @@ import MinimalList from '../components/sections/MinimalList.astro';
 import DataStory from '../components/sections/DataStory.astro';
 import Timeline from '../components/sections/Timeline.astro';
 import CTA from '../components/sections/CTA.astro';
+import { Button } from '../components/ui/button.tsx';
 
 const title = 'Business Autonomy Intelligence';
 const description = 'The intelligence you need to design operations that actually work with your reality, not against it';
@@ -48,22 +49,22 @@ const problems = [
 // Process Timeline for Timeline component
 const process = [
   {
-    date: "Day 1",
+    date: "01",
     title: "Strategic Intelligence Call",
     description: "We analyze your transition constraints and operational misalignments"
   },
   {
-    date: "Week 1-2", 
+    date: "02", 
     title: "Systematic Analysis",
     description: "Deep dive into your cultural, human, and behavioral intelligence patterns"
   },
   {
-    date: "Week 3-4",
+    date: "03",
     title: "Framework Design", 
     description: "Create proven frameworks adapted specifically for your situation"
   },
   {
-    date: "Month 2+",
+    date: "04",
     title: "Internal Implementation",
     description: "You execute the transition internally with our systematic intelligence"
   }
@@ -82,35 +83,42 @@ const baiMethodology = [
 
 <BaseLayout title={title} description={description}>
   <!-- Swiss Typographic Hero -->
-  <TypographicHero 
-    primaryText="Business Autonomy Intelligence"
-    secondaryText="The intelligence you need to design operations that actually work with your reality, not against it"
-    alignment="center"
-  />
+  <div data-animate="hero">
+    <TypographicHero 
+      primaryText="Business Autonomy Intelligence"
+      secondaryText="The intelligence you need to design operations that actually work with your reality, not against it"
+      alignment="center"
+    />
+  </div>
   
   <!-- Elegant Problem Statement List -->
-  <MinimalList 
-    title="Does This Sound Familiar?"
-    items={problems}
-    numbered={true}
-  />
+  <div data-animate="problems">
+    <MinimalList 
+      title="Does This Sound Familiar?"
+      items={problems}
+      numbered={true}
+    />
+  </div>
   
   <!-- What's Really Happening Section -->
   <section class="py-32 lg:py-48 bg-background text-foreground">
     <div class="max-w-6xl mx-auto px-8 lg:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
-        <div>
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-foreground mb-12">
+        <div class="transform transition-all duration-1000" data-animate="happening-left">
+          <h2 class="text-4xl md:text-5xl font-light leading-tight tracking-tight text-foreground mb-12">
             What's Really Happening
           </h2>
           <p class="text-xl font-light text-foreground/80 leading-relaxed">
-            When your business model stops fitting your actual capabilities, lifestyle, or values, you don't just have a strategy problem - you have an intelligence problem.
+            When your business approach stops working, you don't need more strategy - you need clarity about what actually changed.
           </p>
         </div>
-        <div class="space-y-8">
+        <div class="space-y-8 transform transition-all duration-1000 delay-200" data-animate="happening-right">
           <p class="text-lg font-light text-foreground/70 leading-relaxed">
-            Most people try to solve this by working harder, hiring consultants, or adopting more "best practices." But that's like using a map of Paris to navigate Tokyo.
+            Most people try to solve this by working harder or adopting more "best practices," but that's like using a map of Paris to navigate Tokyo.
           </p>
+          <h3 class="text-2xl font-light text-foreground tracking-tight transform transition-all duration-800 delay-500" data-animate="happening-callout">
+            More effort with the wrong framework just gets you more lost.
+          </h3>
           <p class="text-lg font-light text-foreground/70 leading-relaxed">
             You need systematic intelligence about what's actually constraining your autonomy, plus proven frameworks for designing something that works with your reality instead of against it.
           </p>
@@ -121,10 +129,10 @@ const baiMethodology = [
   
   <!-- How Business Autonomy Intelligence Works -->
   <section class="py-32 lg:py-40">
-    <div class="max-w-4xl mx-auto px-20 lg:px-24">
+    <div class="max-w-6xl mx-auto px-8 lg:px-12">
       <div class="grid lg:grid-cols-12 gap-20">
         <div class="lg:col-span-6">
-          <div class="space-y-12" data-animate="bai-content">
+          <div class="space-y-12 transform transition-all duration-1000" data-animate="bai-content">
             <div class="space-y-8">
               <h2 class="text-4xl md:text-5xl font-light leading-tight tracking-tight text-foreground">
                 How Business Autonomy Intelligence Works
@@ -134,80 +142,50 @@ const baiMethodology = [
             
             <div class="space-y-8">
               <p class="text-lg font-light text-foreground leading-relaxed">
-                We deliver detailed intelligence reports on your operational constraints plus proven frameworks you can implement immediately to redesign your operations.
+                You'll see exactly what's constraining your progress, then get proven frameworks to design something that actually fits your reality. You get the clarity you need to make informed decisions - no ongoing consulting dependency.
               </p>
-              
-              <div class="space-y-6">
-                <div class="flex items-start space-x-4">
-                  <div class="w-1 h-1 rounded-full bg-foreground mt-2 flex-shrink-0" />
-                  <p class="text-sm font-light text-foreground leading-relaxed">
-                    <strong class="font-normal">Cultural Intelligence:</strong> We analyze how industry standards and team dynamics are creating hidden constraints on your decision-making and operational freedom.
-                  </p>
-                </div>
-                <div class="flex items-start space-x-4">
-                  <div class="w-1 h-1 rounded-full bg-foreground mt-2 flex-shrink-0" />
-                  <p class="text-sm font-light text-foreground leading-relaxed">
-                    <strong class="font-normal">Human Intelligence:</strong> We map how relationships, stakeholder expectations, and communication patterns are limiting your ability to operate according to your actual capabilities.
-                  </p>
-                </div>
-                <div class="flex items-start space-x-4">
-                  <div class="w-1 h-1 rounded-full bg-foreground mt-2 flex-shrink-0" />
-                  <p class="text-sm font-light text-foreground leading-relaxed">
-                    <strong class="font-normal">Behavioral Intelligence:</strong> We identify how your current systems trigger stress responses or energy drain, and design approaches that work with your natural patterns instead of fighting them.
-                  </p>
-                </div>
-              </div>
+              <p class="text-lg font-light text-foreground leading-relaxed">
+                You receive detailed intelligence reports plus proven frameworks adapted specifically for your situation.
+              </p>
+              <p class="text-lg font-light text-foreground leading-relaxed">
+                <strong class="font-normal">Think category design methodology applied to operational clarity</strong> - whether you're creating a new market position or just need a business model reset that doesn't exhaust you.
+              </p>
             </div>
           </div>
         </div>
         
         <div class="lg:col-span-5 lg:col-start-8">
-          <div class="space-y-16" data-animate="bai-framework">
+          <div class="space-y-16 transform transition-all duration-1000 delay-300" data-animate="bai-framework">
             <div class="space-y-8">
-              <h3 class="text-xl font-light text-foreground">Implementation Framework</h3>
+              <h3 class="text-xl font-light text-foreground">Intelligence Framework</h3>
               <div class="space-y-6">
                 <div class="border-l-2 border-foreground/10 pl-6">
                   <div class="text-sm font-light text-foreground tracking-wider mb-2">
-                    DISCOVERY
+                    CULTURAL INTELLIGENCE
                   </div>
                   <p class="text-sm font-light text-foreground leading-relaxed">
-                    Strategic Intelligence Call to analyze your transition constraints and operational misalignments
+                    We analyze how industry standards and team dynamics are creating hidden constraints on your decision-making and operational freedom.
                   </p>
                 </div>
                 
                 <div class="border-l-2 border-foreground/10 pl-6">
                   <div class="text-sm font-light text-foreground tracking-wider mb-2">
-                    ANALYSIS
+                    HUMAN INTELLIGENCE
                   </div>
                   <p class="text-sm font-light text-foreground leading-relaxed">
-                    Deep intelligence gathering across cultural, human, and behavioral patterns constraining your autonomy
+                    We map how relationships, stakeholder expectations, and communication patterns are limiting your ability to operate according to your actual capabilities.
                   </p>
                 </div>
                 
                 <div class="border-l-2 border-foreground/10 pl-6">
                   <div class="text-sm font-light text-foreground tracking-wider mb-2">
-                    FRAMEWORK
+                    BEHAVIORAL INTELLIGENCE
                   </div>
                   <p class="text-sm font-light text-foreground leading-relaxed">
-                    Proven frameworks adapted specifically for your situation with detailed implementation guides
-                  </p>
-                </div>
-                
-                <div class="border-l-2 border-foreground/10 pl-6">
-                  <div class="text-sm font-light text-foreground tracking-wider mb-2">
-                    HANDOFF
-                  </div>
-                  <p class="text-sm font-light text-foreground leading-relaxed">
-                    You execute the transition internally - no ongoing consulting dependency
+                    We identify how your current systems trigger stress responses or energy drain, and design approaches that work with your natural patterns instead of fighting them.
                   </p>
                 </div>
               </div>
-            </div>
-            
-            <div class="pt-8 border-t border-foreground/10">
-              <p class="text-sm font-light text-foreground/70 leading-relaxed">
-                Think category design methodology applied to operational clarity - whether you're creating a new market position or just need a business model that doesn't exhaust you.
-              </p>
             </div>
           </div>
         </div>
@@ -215,51 +193,143 @@ const baiMethodology = [
     </div>
   </section>
 
-
   <!-- Process Timeline -->
-  <Timeline 
-    title="From Constraint to Clarity"
-    events={process}
-  />
+  <div data-animate="timeline">
+    <Timeline 
+      title="From Constraint to Clarity"
+      events={process}
+    />
+  </div>
   
   <!-- Strategic CTA -->
-  <CTA 
-    title="Ready to Get Your Autonomy Back?"
-    description="Schedule a Strategic Intelligence Call where we'll analyze your transition constraints and determine if Business Autonomy Intelligence frameworks apply to your situation. No obligation. Just systematic analysis of what's actually limiting your operational freedom."
-    ctaText="Schedule Your Strategic Intelligence Call"
-  />
+  <section class="py-32 lg:py-40">
+    <div class="max-w-7xl mx-auto px-8 lg:px-12">
+      <div class="grid grid-cols-12 gap-16">
+        <div class="col-span-12 lg:col-span-5 transform transition-all duration-1000" data-animate="cta-left">
+          <h2 class="text-4xl md:text-5xl font-light leading-tight tracking-tight text-foreground mb-8">
+            Something's Driving Your Business Instead of You
+          </h2>
+          <p class="text-lg font-light text-foreground/70 leading-relaxed">
+            You sense it but can't name it. Decisions that should be yours aren't. Systems that should protect you have become hindrances to progress.
+          </p>
+        </div>
+        
+        <div class="col-span-12 lg:col-span-6 lg:col-start-7 lg:pt-16 transform transition-all duration-1000 delay-200" data-animate="cta-right">
+          <div class="space-y-8">
+            <p class="text-lg font-light text-foreground/70 leading-relaxed">
+              We expose the specific patterns that are systematically eroding your operational control - then show you how to transform them into strategic advantages.
+            </p>
+            <p class="text-lg font-light text-foreground leading-relaxed transform transition-all duration-800 delay-600" data-animate="cta-promise">
+              <strong class="font-normal">In less than an hour, we'll identify exactly what's turning your own infrastructure against you.</strong>
+            </p>
+            <div class="transform transition-all duration-500 delay-800" data-animate="cta-button">
+              <a href="#contact">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="font-light border-foreground/20 hover:border-foreground/40 text-lg hover:scale-105 transition-transform duration-300"
+                >
+                  Apply For Your Analysis Session
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
-    const observerOptions = {
-      threshold: 0.2,
-      rootMargin: '0px'
-    };
+  // Wait for DOM to be fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('Animation script loaded');
+    
+    // Add a short delay to ensure page is fully rendered
+    setTimeout(() => {
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '-100px'
+      };
 
-    // Observe elements with progressive delays
-    const elementsWithDelays = [
-      { selector: '[data-animate="bai-content"]', delay: 0 },
-      { selector: '[data-animate="bai-framework"]', delay: 200 }
-    ];
-
-    elementsWithDelays.forEach(({ selector, delay }) => {
-      const element = document.querySelector(selector);
-      if (element) {
+      // Find all elements with data-animate attributes
+      const animatedElements = document.querySelectorAll('[data-animate]');
+      console.log('Found animated elements:', animatedElements.length);
+      
+      animatedElements.forEach((element) => {
+        // Set transition properties first
+        element.style.transition = 'all 1.2s ease-out';
+        
+        // Set initial hidden state based on animation type
+        const animationName = element.getAttribute('data-animate');
+        
+        if (animationName === 'hero') {
+          element.style.opacity = '0';
+          element.style.transform = 'scale(0.8) translateY(20px)';
+        } else if (animationName === 'timeline') {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(80px)';
+        } else {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(50px)';
+        }
+        
         const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const targetElement = entry.target as HTMLElement;
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            console.log('🎬 Animating:', entry.target.getAttribute('data-animate'));
+            const target = entry.target;
+            
+            // Custom animations based on element type
+            const animationName = target.getAttribute('data-animate');
+            let delay = 0;
+            
+            if (animationName === 'hero') {
+              // Hero: Dramatic scale up from center
+              target.style.transform = 'scale(0.8) translateY(20px)';
+              target.style.opacity = '0';
               setTimeout(() => {
-                targetElement.classList.remove('opacity-0', 'translate-y-10');
-                targetElement.classList.add('opacity-100', 'translate-y-0');
+                target.style.transform = 'scale(1) translateY(0px)';
+                target.style.opacity = '1';
+              }, 300);
+              
+            } else if (animationName === 'timeline') {
+              // Timeline: Simple fade up with slight delay
+              setTimeout(() => {
+                target.style.opacity = '1';
+                target.style.transform = 'translateY(0px)';
+              }, 200);
+              
+            } else {
+              // Standard animations for other elements
+              if (animationName.includes('right') || animationName.includes('framework')) {
+                delay = 200;
+              } else if (animationName.includes('callout') || animationName.includes('promise')) {
+                delay = 400;
+              } else if (animationName.includes('button')) {
+                delay = 600;
+              }
+              
+              setTimeout(() => {
+                target.style.opacity = '1';
+                target.style.transform = 'translateY(0px)';
               }, delay);
             }
-          });
-        }, observerOptions);
+            
+            observer.unobserve(target);
+          }
+        });
+      }, observerOptions);
 
         observer.observe(element);
-      }
-    });
+      });
+    }, 100); // Small delay to ensure everything is loaded
+  });
+
+  // Also try on astro:page-load in case DOMContentLoaded doesn't work
+  document.addEventListener('astro:page-load', () => {
+    console.log('Astro page load triggered');
+    // Trigger the same logic
+    document.dispatchEvent(new Event('DOMContentLoaded'));
   });
 </script>

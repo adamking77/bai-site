@@ -13,23 +13,33 @@ export interface Props {
 const { title, events } = Astro.props;
 ---
 
-<section class="py-16 lg:py-24">
-  <div class="max-w-4xl mx-auto px-6 lg:px-8">
-    <div class="space-y-8">
-      <h3 class="text-xl font-light text-foreground tracking-tight mb-8">
-        {title}
-      </h3>
-      <div class="space-y-6">
-        {events.map((event) => (
-          <div class="space-y-2">
-            <div class="flex items-center space-x-4">
-              <div class="text-sm font-light text-foreground/50">{event.date}</div>
-              <div class="w-8 h-px bg-foreground/20"></div>
-              <div class="text-sm font-light text-foreground">{event.title}</div>
+<section class="py-32 lg:py-48 bg-background">
+  <div class="max-w-6xl mx-auto px-8 lg:px-12">
+    <div class="space-y-20">
+      <div class="text-center space-y-8">
+        <h2 class="text-4xl md:text-5xl font-light leading-tight tracking-tight text-foreground">
+          {title}
+        </h2>
+        <div class="w-16 h-px bg-foreground/20 mx-auto"></div>
+      </div>
+      
+      <div class="space-y-12">
+        {events.map((event, index) => (
+          <div class="flex items-start space-x-10 p-3 -m-3 rounded-lg hover:scale-105 transition-all duration-300 ease-out">
+            <div class="flex-shrink-0 w-28 text-right">
+              <div class="text-sm font-light text-foreground/50 tracking-wider uppercase">
+                {event.date}
+              </div>
             </div>
-            <p class="text-xs font-light text-foreground/60 ml-16">
-              {event.description}
-            </p>
+            <div class="flex-shrink-0 w-px h-16 bg-foreground/20 mt-2"></div>
+            <div class="flex-1 space-y-3 pt-1">
+              <h3 class="text-xl font-light text-foreground">
+                {event.title}
+              </h3>
+              <p class="text-base font-light text-foreground/70 leading-relaxed">
+                {event.description}
+              </p>
+            </div>
           </div>
         ))}
       </div>

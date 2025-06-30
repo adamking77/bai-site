@@ -26,6 +26,9 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script is:inline>
       (function() {
         const storageKey = 'astro-ui-theme';
@@ -51,9 +54,19 @@ const {
     </script>
 </head>
 <body class="min-h-screen bg-background font-sans antialiased">
-  <ThemeProvider client:load defaultTheme="system" storageKey="astro-ui-theme">
-    <Navigation />
-    <main class="flex-1 pt-20 lg:pt-24">
+  <ThemeProvider client:load defaultTheme="light" storageKey="astro-ui-theme">
+    <!-- Simple Header with Logo -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-foreground/10">
+      <div class="max-w-6xl mx-auto px-8 lg:px-12">
+        <div class="flex items-center justify-start py-6">
+          <div class="text-base font-light tracking-wide text-foreground">
+            B.A.I. From GenZen HQ
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <main class="flex-1 pt-20">
       <slot />
     </main>
     <Toaster client:load />

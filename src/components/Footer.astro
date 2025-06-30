@@ -27,32 +27,14 @@ const InstagramIcon = `
 
 <footer class="py-16 border-t border-foreground/10">
   <div class="max-w-7xl mx-auto px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
-      <div class="text-center md:text-left">
+    <div class="text-center">
+      <div class="space-y-2">
         <div class="text-sm font-light text-foreground/50">
-          © {currentYear} Design & Engineering Co. All rights reserved.
+          © {currentYear} <a href="https://genzenhq.com" class="hover:text-foreground/60 transition-colors duration-200">GenZen HQ</a>. All rights reserved.
         </div>
-      </div>
-      
-      <div class="flex items-center space-x-6">
-        <a 
-          href="#" 
-          class="text-foreground/40 hover:text-foreground/70 transition-colors"
-          aria-label="LinkedIn"
-          set:html={LinkedinIcon}
-        />
-        <a 
-          href="#" 
-          class="text-foreground/40 hover:text-foreground/70 transition-colors"
-          aria-label="Twitter"
-          set:html={TwitterIcon}
-        />
-        <a 
-          href="#" 
-          class="text-foreground/40 hover:text-foreground/70 transition-colors"
-          aria-label="Instagram"
-          set:html={InstagramIcon}
-        />
+        <div class="text-xs font-light text-foreground/40 italic">
+          Business Autonomy Intelligence is a division of <a href="https://genzenhq.com" class="hover:text-foreground/60 transition-colors duration-200">GenZen HQ</a> - restoring human agency in an age of systematic exploitation.
+        </div>
       </div>
     </div>
   </div>
