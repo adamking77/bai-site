@@ -1,0 +1,265 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TypographicHero from '../components/sections/TypographicHero.astro';
+import MinimalList from '../components/sections/MinimalList.astro';
+import DataStory from '../components/sections/DataStory.astro';
+import Timeline from '../components/sections/Timeline.astro';
+import CTA from '../components/sections/CTA.astro';
+
+const title = 'Business Autonomy Intelligence';
+const description = 'The intelligence you need to design operations that actually work with your reality, not against it';
+
+// BAI Problem Statements for MinimalList
+const problems = [
+  {
+    title: "Decision-making has become disproportionately complex",
+    description: "Choices that should be straightforward now require extensive analysis, multiple stakeholder input, or create unexpected downstream complications"
+  },
+  {
+    title: "Your operational rhythm is driven by urgency rather than priority",
+    description: "You spend most of your time responding to what breaks rather than building what matters"
+  },
+  {
+    title: "Standard industry approaches actively conflict with your capabilities",
+    description: "Methods that work for others in your field create friction, energy drain, or stress responses in your specific situation"
+  },
+  {
+    title: "Repeated application of proven solutions yields diminishing returns",
+    description: "Strategies that worked before now produce marginal results or create new problems you didn't anticipate"
+  },
+  {
+    title: "Communication breakdowns occur despite clear intent",
+    description: "Your team, partners, or stakeholders frequently misinterpret direction, even when you believe you're being explicit"
+  },
+  {
+    title: "Activity levels are inversely related to meaningful progress",
+    description: "Higher effort produces lower satisfaction, more motion creates less forward movement"
+  },
+  {
+    title: "Confidence in your business judgment has become inconsistent",
+    description: "You second-guess decisions in areas where you previously operated with certainty"
+  },
+  {
+    title: "Business development feels systematically misaligned with your operational strengths",
+    description: "The methods required to grow your business actively conflict with how you naturally prefer to work"
+  }
+];
+
+// Process Timeline for Timeline component
+const process = [
+  {
+    date: "Day 1",
+    title: "Strategic Intelligence Call",
+    description: "We analyze your transition constraints and operational misalignments"
+  },
+  {
+    date: "Week 1-2", 
+    title: "Systematic Analysis",
+    description: "Deep dive into your cultural, human, and behavioral intelligence patterns"
+  },
+  {
+    date: "Week 3-4",
+    title: "Framework Design", 
+    description: "Create proven frameworks adapted specifically for your situation"
+  },
+  {
+    date: "Month 2+",
+    title: "Internal Implementation",
+    description: "You execute the transition internally with our systematic intelligence"
+  }
+];
+
+// Data grid for BAI methodology DataStory component
+const baiMethodology = [
+  ["Cultural Intelligence", "Analyze industry standards constraining decisions"],
+  ["Human Intelligence", "Map relationship patterns limiting capabilities"], 
+  ["Behavioral Intelligence", "Identify stress-triggering system patterns"],
+  ["Framework Design", "Create proven approaches for your reality"],
+  ["Implementation", "Execute transition with systematic intelligence"],
+  ["Autonomy Recovery", "95% success rate in operational freedom"]
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <!-- Swiss Typographic Hero -->
+  <TypographicHero 
+    primaryText="Business Autonomy Intelligence"
+    secondaryText="The intelligence you need to design operations that actually work with your reality, not against it"
+    alignment="center"
+  />
+  
+  <!-- Elegant Problem Statement List -->
+  <MinimalList 
+    title="Does This Sound Familiar?"
+    items={problems}
+    numbered={true}
+  />
+  
+  <!-- What's Really Happening Section -->
+  <section class="py-32 lg:py-48 bg-background text-foreground">
+    <div class="max-w-6xl mx-auto px-8 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+        <div>
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-light tracking-tight text-foreground mb-12">
+            What's Really Happening
+          </h2>
+          <p class="text-xl font-light text-foreground/80 leading-relaxed">
+            When your business model stops fitting your actual capabilities, lifestyle, or values, you don't just have a strategy problem - you have an intelligence problem.
+          </p>
+        </div>
+        <div class="space-y-8">
+          <p class="text-lg font-light text-foreground/70 leading-relaxed">
+            Most people try to solve this by working harder, hiring consultants, or adopting more "best practices." But that's like using a map of Paris to navigate Tokyo.
+          </p>
+          <p class="text-lg font-light text-foreground/70 leading-relaxed">
+            You need systematic intelligence about what's actually constraining your autonomy, plus proven frameworks for designing something that works with your reality instead of against it.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- How Business Autonomy Intelligence Works -->
+  <section class="py-32 lg:py-40">
+    <div class="max-w-4xl mx-auto px-20 lg:px-24">
+      <div class="grid lg:grid-cols-12 gap-20">
+        <div class="lg:col-span-6">
+          <div class="space-y-12" data-animate="bai-content">
+            <div class="space-y-8">
+              <h2 class="text-4xl md:text-5xl font-light leading-tight tracking-tight text-foreground">
+                How Business Autonomy Intelligence Works
+              </h2>
+              <div class="w-12 h-px bg-foreground/20"></div>
+            </div>
+            
+            <div class="space-y-8">
+              <p class="text-lg font-light text-foreground leading-relaxed">
+                We deliver detailed intelligence reports on your operational constraints plus proven frameworks you can implement immediately to redesign your operations.
+              </p>
+              
+              <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                  <div class="w-1 h-1 rounded-full bg-foreground mt-2 flex-shrink-0" />
+                  <p class="text-sm font-light text-foreground leading-relaxed">
+                    <strong class="font-normal">Cultural Intelligence:</strong> We analyze how industry standards and team dynamics are creating hidden constraints on your decision-making and operational freedom.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div class="w-1 h-1 rounded-full bg-foreground mt-2 flex-shrink-0" />
+                  <p class="text-sm font-light text-foreground leading-relaxed">
+                    <strong class="font-normal">Human Intelligence:</strong> We map how relationships, stakeholder expectations, and communication patterns are limiting your ability to operate according to your actual capabilities.
+                  </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                  <div class="w-1 h-1 rounded-full bg-foreground mt-2 flex-shrink-0" />
+                  <p class="text-sm font-light text-foreground leading-relaxed">
+                    <strong class="font-normal">Behavioral Intelligence:</strong> We identify how your current systems trigger stress responses or energy drain, and design approaches that work with your natural patterns instead of fighting them.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:col-span-5 lg:col-start-8">
+          <div class="space-y-16" data-animate="bai-framework">
+            <div class="space-y-8">
+              <h3 class="text-xl font-light text-foreground">Implementation Framework</h3>
+              <div class="space-y-6">
+                <div class="border-l-2 border-foreground/10 pl-6">
+                  <div class="text-sm font-light text-foreground tracking-wider mb-2">
+                    DISCOVERY
+                  </div>
+                  <p class="text-sm font-light text-foreground leading-relaxed">
+                    Strategic Intelligence Call to analyze your transition constraints and operational misalignments
+                  </p>
+                </div>
+                
+                <div class="border-l-2 border-foreground/10 pl-6">
+                  <div class="text-sm font-light text-foreground tracking-wider mb-2">
+                    ANALYSIS
+                  </div>
+                  <p class="text-sm font-light text-foreground leading-relaxed">
+                    Deep intelligence gathering across cultural, human, and behavioral patterns constraining your autonomy
+                  </p>
+                </div>
+                
+                <div class="border-l-2 border-foreground/10 pl-6">
+                  <div class="text-sm font-light text-foreground tracking-wider mb-2">
+                    FRAMEWORK
+                  </div>
+                  <p class="text-sm font-light text-foreground leading-relaxed">
+                    Proven frameworks adapted specifically for your situation with detailed implementation guides
+                  </p>
+                </div>
+                
+                <div class="border-l-2 border-foreground/10 pl-6">
+                  <div class="text-sm font-light text-foreground tracking-wider mb-2">
+                    HANDOFF
+                  </div>
+                  <p class="text-sm font-light text-foreground leading-relaxed">
+                    You execute the transition internally - no ongoing consulting dependency
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="pt-8 border-t border-foreground/10">
+              <p class="text-sm font-light text-foreground/70 leading-relaxed">
+                Think category design methodology applied to operational clarity - whether you're creating a new market position or just need a business model that doesn't exhaust you.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Process Timeline -->
+  <Timeline 
+    title="From Constraint to Clarity"
+    events={process}
+  />
+  
+  <!-- Strategic CTA -->
+  <CTA 
+    title="Ready to Get Your Autonomy Back?"
+    description="Schedule a Strategic Intelligence Call where we'll analyze your transition constraints and determine if Business Autonomy Intelligence frameworks apply to your situation. No obligation. Just systematic analysis of what's actually limiting your operational freedom."
+    ctaText="Schedule Your Strategic Intelligence Call"
+  />
+</BaseLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px'
+    };
+
+    // Observe elements with progressive delays
+    const elementsWithDelays = [
+      { selector: '[data-animate="bai-content"]', delay: 0 },
+      { selector: '[data-animate="bai-framework"]', delay: 200 }
+    ];
+
+    elementsWithDelays.forEach(({ selector, delay }) => {
+      const element = document.querySelector(selector);
+      if (element) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const targetElement = entry.target as HTMLElement;
+              setTimeout(() => {
+                targetElement.classList.remove('opacity-0', 'translate-y-10');
+                targetElement.classList.add('opacity-100', 'translate-y-0');
+              }, delay);
+            }
+          });
+        }, observerOptions);
+
+        observer.observe(element);
+      }
+    });
+  });
+</script>
