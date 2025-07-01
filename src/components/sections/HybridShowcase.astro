@@ -23,7 +23,7 @@ const { primaryText, accentText, gridTitle, gridItems } = Astro.props;
     <ScrollAnimator client:load threshold={0.2} duration={1000}>
       <div class="text-center mb-24">
         <div class="space-y-8">
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-light leading-[0.85] tracking-tight text-foreground">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-light leading-[1.5] tracking-tight text-foreground">
             {primaryText}
           </h1>
           <div class="text-lg font-light text-foreground/50 tracking-widest uppercase">
@@ -58,7 +58,7 @@ const { primaryText, accentText, gridTitle, gridItems } = Astro.props;
                   <div class="text-xs font-light text-foreground/50 tracking-wider uppercase">
                     {item.label}
                   </div>
-                  <div class="text-xl font-light text-foreground group-hover:text-blue-500 transition-colors duration-300">
+                  <div class="text-xl font-light text-foreground group-hover:text-custom-navy transition-colors duration-300">
                     {item.value}
                   </div>
                   {item.description && (

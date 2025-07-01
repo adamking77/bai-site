@@ -67,6 +67,28 @@
   }
 }
 
+/* Custom Line Heights - Force application */
+.heading-relaxed {
+  line-height: 1.25 !important;
+}
+
+.cta-heading-relaxed {
+  line-height: 1.25 !important;
+}
+
+/* Custom Colors */
+.text-custom-navy { color: #2c4863; }
+.bg-custom-navy { background-color: #2c4863; }
+.bg-custom-navy-30 { background-color: rgba(44, 72, 99, 0.3); }
+.border-custom-navy { border-color: #2c4863; }
+.hover\:text-custom-navy:hover { color: #2c4863; }
+.hover\:bg-custom-navy:hover { background-color: #2c4863; }
+.group-hover\:text-custom-navy:hover { color: #2c4863; }
+.group-hover\:bg-custom-navy:hover { background-color: #2c4863; }
+.group:hover .group-hover\:text-custom-navy { color: #2c4863; }
+.group:hover .group-hover\:bg-custom-navy { background-color: #2c4863; }
+.group:hover .group-hover\:bg-custom-navy-30 { background-color: rgba(44, 72, 99, 0.3); }
+
 /* Swiss Design Utilities */
 @layer utilities {
   .text-gradient {

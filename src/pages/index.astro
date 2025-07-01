@@ -3,72 +3,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import TypographicHero from '../components/sections/TypographicHero.astro';
 import MinimalList from '../components/sections/MinimalList.astro';
 import DataStory from '../components/sections/DataStory.astro';
-import Timeline from '../components/sections/Timeline.astro';
 import CTA from '../components/sections/CTA.astro';
 import { Button } from '../components/ui/button.tsx';
 
-const title = 'Business Autonomy Intelligence';
-const description = 'The intelligence you need to design operations that actually work with your reality, not against it';
+const title = 'Business Autonomy Intelligence'; // Updated line heights
+const description = 'When life changes, your business systems need to change with you';
 
 // BAI Problem Statements for MinimalList
 const problems = [
   {
-    title: "Decision-making has become disproportionately complex",
-    description: "Choices that should be straightforward now require extensive analysis, multiple stakeholder input, or create unexpected downstream complications"
+    title: "Your business demands constant attention to what it needs rather than supporting what you want to build",
+    description: "The systems you created to serve your goals now require you to serve them instead"
   },
   {
-    title: "Your operational rhythm is driven by urgency rather than priority",
-    description: "You spend most of your time responding to what breaks rather than building what matters"
+    title: "Systems designed for your previous life now create friction with your current reality",
+    description: "What worked when you were in a different life phase now constrains your new priorities and capabilities"
   },
   {
-    title: "Standard industry approaches actively conflict with your capabilities",
-    description: "Methods that work for others in your field create friction, energy drain, or stress responses in your specific situation"
+    title: "Industry standards and processes feel increasingly misaligned with your personal capabilities and priorities",
+    description: "The accepted ways of doing business conflict with how you need to operate given your current circumstances"
   },
   {
-    title: "Repeated application of proven solutions yields diminishing returns",
-    description: "Strategies that worked before now produce marginal results or create new problems you didn't anticipate"
+    title: "Growth opportunities require sacrificing lifestyle choices that matter to you",
+    description: "Business expansion demands compromises you're no longer willing to make"
   },
   {
-    title: "Communication breakdowns occur despite clear intent",
-    description: "Your team, partners, or stakeholders frequently misinterpret direction, even when you believe you're being explicit"
+    title: "Decision-making involves choosing between business success and personal wellbeing",
+    description: "You face false choices between what's good for the business and what's good for your life"
   },
   {
-    title: "Activity levels are inversely related to meaningful progress",
-    description: "Higher effort produces lower satisfaction, more motion creates less forward movement"
+    title: "Team or stakeholder expectations conflict with your evolving values and boundaries",
+    description: "Others expect you to operate according to old patterns that no longer fit who you're becoming"
   },
   {
-    title: "Confidence in your business judgment has become inconsistent",
-    description: "You second-guess decisions in areas where you previously operated with certainty"
+    title: "What once energized you about the business now drains you consistently",
+    description: "Activities that used to fuel your passion now feel like obligations you endure"
   },
   {
-    title: "Business development feels systematically misaligned with your operational strengths",
-    description: "The methods required to grow your business actively conflict with how you naturally prefer to work"
+    title: "You find yourself defending business choices that don't align with who you're becoming",
+    description: "You're justifying decisions that serve the business but contradict your personal evolution"
   }
 ];
 
-// Process Timeline for Timeline component
-const process = [
-  {
-    date: "01",
-    title: "Strategic Intelligence Call",
-    description: "We analyze your transition constraints and operational misalignments"
-  },
-  {
-    date: "02", 
-    title: "Systematic Analysis",
-    description: "Deep dive into your cultural, human, and behavioral intelligence patterns"
-  },
-  {
-    date: "03",
-    title: "Framework Design", 
-    description: "Create proven frameworks adapted specifically for your situation"
-  },
-  {
-    date: "04",
-    title: "Internal Implementation",
-    description: "You execute the transition internally with our systematic intelligence"
-  }
-];
 
 // Data grid for BAI methodology DataStory component
 const baiMethodology = [
@@ -86,7 +62,7 @@ const baiMethodology = [
   <div data-animate="hero">
     <TypographicHero 
       primaryText="Business Autonomy Intelligence"
-      secondaryText="The intelligence you need to design operations that actually work with your reality, not against it"
+      secondaryText="When life changes, your business systems need to change with you"
       alignment="center"
     />
   </div>
@@ -94,67 +70,217 @@ const baiMethodology = [
   <!-- Elegant Problem Statement List -->
   <div data-animate="problems">
     <MinimalList 
-      title="Does This Sound Familiar?"
+      title="Is This Your Situation?"
       items={problems}
       numbered={true}
     />
   </div>
   
-  <!-- What's Really Happening Section -->
-  <section class="py-32 lg:py-48 bg-background text-foreground">
-    <div class="max-w-6xl mx-auto px-8 lg:px-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
-        <div class="transform transition-all duration-1000" data-animate="happening-left">
-          <h2 class="text-4xl md:text-5xl font-light leading-tight tracking-tight text-foreground mb-12">
-            What's Really Happening
+  <!-- Business Autonomy Definition Section -->
+  <section class="py-16 md:py-24 lg:py-32 xl:py-40 bg-foreground/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <div class="grid grid-cols-1 gap-8 md:gap-12 lg:grid-cols-2 lg:gap-20">
+        <div class="transform transition-all duration-1000" data-animate="autonomy-left">
+          <h2 class="text-4xl md:text-5xl font-light leading-[1.3] tracking-tight heading-relaxed text-foreground mb-12">
+            What Is Business Autonomy?
           </h2>
-          <p class="text-xl font-light text-foreground/80 leading-relaxed">
-            When your business approach stops working, you don't need more strategy - you need clarity about what actually changed.
+          <p class="text-lg font-light text-foreground/70 leading-relaxed">
+            <strong class="font-normal">Business Autonomy</strong> means your business enhances the life you want rather than demanding the life it needs.
           </p>
         </div>
-        <div class="space-y-8 transform transition-all duration-1000 delay-200" data-animate="happening-right">
-          <p class="text-lg font-light text-foreground/70 leading-relaxed">
-            Most people try to solve this by working harder or adopting more "best practices," but that's like using a map of Paris to navigate Tokyo.
+        <div class="space-y-8 transform transition-all duration-1000 delay-200" data-animate="autonomy-right">
+          <div class="space-y-6">
+            <div class="group flex items-start space-x-4 p-4 rounded-lg hover:bg-foreground/5 transition-all duration-300 cursor-pointer" data-animate="autonomy-item-1">
+              <div class="w-2 h-2 rounded-full bg-foreground/40 mt-3 flex-shrink-0 group-hover:bg-custom-navy group-hover:scale-125 transition-all duration-300"></div>
+              <div>
+                <h3 class="text-lg font-light text-foreground mb-2 group-hover:text-custom-navy transition-colors duration-300">Time Freedom</h3>
+                <p class="text-base font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  Systems run smoothly without constant supervision
+                </p>
+              </div>
+            </div>
+            <div class="group flex items-start space-x-4 p-4 rounded-lg hover:bg-foreground/5 transition-all duration-300 cursor-pointer" data-animate="autonomy-item-2">
+              <div class="w-2 h-2 rounded-full bg-foreground/40 mt-3 flex-shrink-0 group-hover:bg-custom-navy group-hover:scale-125 transition-all duration-300"></div>
+              <div>
+                <h3 class="text-lg font-light text-foreground mb-2 group-hover:text-custom-navy transition-colors duration-300">Decision Authority</h3>
+                <p class="text-base font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  Choices align with your values and capabilities, not just market demands
+                </p>
+              </div>
+            </div>
+            <div class="group flex items-start space-x-4 p-4 rounded-lg hover:bg-foreground/5 transition-all duration-300 cursor-pointer" data-animate="autonomy-item-3">
+              <div class="w-2 h-2 rounded-full bg-foreground/40 mt-3 flex-shrink-0 group-hover:bg-custom-navy group-hover:scale-125 transition-all duration-300"></div>
+              <div>
+                <h3 class="text-lg font-light text-foreground mb-2 group-hover:text-custom-navy transition-colors duration-300">Growth Control</h3>
+                <p class="text-base font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  Expansion enhances rather than constrains your lifestyle options
+                </p>
+              </div>
+            </div>
+            <div class="group flex items-start space-x-4 p-4 rounded-lg hover:bg-foreground/5 transition-all duration-300 cursor-pointer" data-animate="autonomy-item-4">
+              <div class="w-2 h-2 rounded-full bg-foreground/40 mt-3 flex-shrink-0 group-hover:bg-custom-navy group-hover:scale-125 transition-all duration-300"></div>
+              <div>
+                <h3 class="text-lg font-light text-foreground mb-2 group-hover:text-custom-navy transition-colors duration-300">Operational Flexibility</h3>
+                <p class="text-base font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  Business adapts to serve your evolving priorities
+                </p>
+              </div>
+            </div>
+            <div class="group flex items-start space-x-4 p-4 rounded-lg hover:bg-foreground/5 transition-all duration-300 cursor-pointer" data-animate="autonomy-item-5">
+              <div class="w-2 h-2 rounded-full bg-foreground/40 mt-3 flex-shrink-0 group-hover:bg-custom-navy group-hover:scale-125 transition-all duration-300"></div>
+              <div>
+                <h3 class="text-lg font-light text-foreground mb-2 group-hover:text-custom-navy transition-colors duration-300">Strategic Independence</h3>
+                <p class="text-base font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  You lead the systems instead of systems leading you
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Ownership Inversion Section -->
+  <section class="py-16 md:py-24 lg:py-32 xl:py-48 bg-background text-foreground">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <div class="grid grid-cols-1 gap-8 md:gap-12 lg:grid-cols-2 lg:gap-20 mb-20">
+        <div class="transform transition-all duration-1000" data-animate="inversion-left">
+          <h2 class="text-4xl md:text-5xl font-light leading-[1.3] tracking-tight heading-relaxed text-foreground mb-12">
+            What's Really Happening: Ownership Inversion
+          </h2>
+          <p class="text-lg font-light text-foreground/70 leading-relaxed mb-8">
+            Your business has entered <strong class="font-normal">Ownership Inversion</strong> - you <em>think</em> you own the business, but really, it owns you.
           </p>
-          <h3 class="text-2xl font-light text-foreground tracking-tight transform transition-all duration-800 delay-500" data-animate="happening-callout">
-            More effort with the wrong framework just gets you more lost.
+          <p class="text-lg font-light text-foreground/70 leading-relaxed">
+            During your previous life phase, you created systems that matched your circumstances, goals, and capabilities. Those systems worked because they aligned with who you were and what you wanted then.
+          </p>
+        </div>
+        <div class="space-y-8 transform transition-all duration-1000 delay-200" data-animate="inversion-right">
+          <p class="text-lg font-light text-foreground/70 leading-relaxed">
+            But when life changes significantly - through relationships, health, family transitions, or even success itself - those same systems become misalignment mechanisms.
+          </p>
+          <h3 class="text-2xl font-light text-foreground tracking-tight transform transition-all duration-800 delay-500" data-animate="inversion-callout">
+            This isn't business failure - it's life evolution requiring business evolution.
           </h3>
           <p class="text-lg font-light text-foreground/70 leading-relaxed">
-            You need systematic intelligence about what's actually constraining your autonomy, plus proven frameworks for designing something that works with your reality instead of against it.
+            The systems that got you here need intelligent redesign to serve you there.
           </p>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  
+  <!-- The Pattern Section -->
+  <section class="py-16 md:py-24 lg:py-32 xl:py-40 bg-foreground/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <div class="space-y-16 transform transition-all duration-1000" data-animate="pattern-steps">
+        <div class="space-y-8 text-center">
+          <h2 class="text-4xl md:text-5xl font-light leading-[1.3] tracking-tight heading-relaxed text-foreground">The Pattern</h2>
+          <div class="w-16 h-px bg-foreground/20 mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div class="space-y-6 group hover:scale-105 transition-all duration-500 cursor-pointer" data-animate="pattern-item-1">
+            <div class="flex items-center space-x-4">
+              <div class="w-8 h-8 rounded-full bg-foreground/10 flex items-center justify-center group-hover:bg-custom-navy group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
+                <span class="text-sm font-light text-foreground group-hover:text-white transition-colors duration-300">01</span>
+              </div>
+              <div class="flex-1 h-px bg-foreground/10 group-hover:bg-custom-navy/30 transition-colors duration-500"></div>
+            </div>
+            <div class="space-y-3 p-4 rounded-lg group-hover:bg-foreground/5 transition-all duration-300">
+              <h4 class="text-lg font-light text-foreground group-hover:text-custom-navy transition-colors duration-300">
+                Life Event Trigger
+              </h4>
+              <p class="text-sm font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                Relationship changes, health issues, family shift, or lifestyle evolution
+              </p>
+            </div>
+          </div>
+          
+          <div class="space-y-6 group hover:scale-105 transition-all duration-500 cursor-pointer" data-animate="pattern-item-2">
+            <div class="flex items-center space-x-4">
+              <div class="w-8 h-8 rounded-full bg-foreground/10 flex items-center justify-center group-hover:bg-custom-navy group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
+                <span class="text-sm font-light text-foreground group-hover:text-white transition-colors duration-300">02</span>
+              </div>
+              <div class="flex-1 h-px bg-foreground/10 group-hover:bg-custom-navy/30 transition-colors duration-500"></div>
+            </div>
+            <div class="space-y-3 p-4 rounded-lg group-hover:bg-foreground/5 transition-all duration-300">
+              <h4 class="text-lg font-light text-foreground group-hover:text-custom-navy transition-colors duration-300">
+                System Misalignment
+              </h4>
+              <p class="text-sm font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                Business systems designed for old reality constrain new reality
+              </p>
+            </div>
+          </div>
+          
+          <div class="space-y-6 group hover:scale-105 transition-all duration-500 cursor-pointer" data-animate="pattern-item-3">
+            <div class="flex items-center space-x-4">
+              <div class="w-8 h-8 rounded-full bg-foreground/10 flex items-center justify-center group-hover:bg-custom-navy group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
+                <span class="text-sm font-light text-foreground group-hover:text-white transition-colors duration-300">03</span>
+              </div>
+              <div class="flex-1 h-px bg-foreground/10 group-hover:bg-custom-navy/30 transition-colors duration-500"></div>
+            </div>
+            <div class="space-y-3 p-4 rounded-lg group-hover:bg-foreground/5 transition-all duration-300">
+              <h4 class="text-lg font-light text-foreground group-hover:text-custom-navy transition-colors duration-300">
+                Operational Captivity
+              </h4>
+              <p class="text-sm font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                You become servant to systems that should serve you
+              </p>
+            </div>
+          </div>
+          
+          <div class="space-y-6 group hover:scale-105 transition-all duration-500 cursor-pointer" data-animate="pattern-item-4">
+            <div class="flex items-center space-x-4">
+              <div class="w-8 h-8 rounded-full bg-foreground/10 flex items-center justify-center group-hover:bg-custom-navy group-hover:scale-110 transition-all duration-300 group-hover:shadow-lg">
+                <span class="text-sm font-light text-foreground group-hover:text-white transition-colors duration-300">04</span>
+              </div>
+            </div>
+            <div class="space-y-3 p-4 rounded-lg group-hover:bg-foreground/5 transition-all duration-300">
+              <h4 class="text-lg font-light text-foreground group-hover:text-custom-navy transition-colors duration-300">
+                Autonomy Erosion
+              </h4>
+              <p class="text-sm font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                Business demands override personal priorities and capabilities
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
   
   <!-- How Business Autonomy Intelligence Works -->
-  <section class="py-32 lg:py-40">
-    <div class="max-w-6xl mx-auto px-8 lg:px-12">
-      <div class="grid lg:grid-cols-12 gap-20">
-        <div class="lg:col-span-6">
+  <section class="py-16 md:py-24 lg:py-32 xl:py-40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 lg:gap-20">
+        <div class="md:col-span-7 lg:col-span-6">
           <div class="space-y-12 transform transition-all duration-1000" data-animate="bai-content">
             <div class="space-y-8">
-              <h2 class="text-4xl md:text-5xl font-light leading-tight tracking-tight text-foreground">
+              <h2 class="text-4xl md:text-5xl font-light leading-[1.3] tracking-tight heading-relaxed text-foreground">
                 How Business Autonomy Intelligence Works
               </h2>
               <div class="w-12 h-px bg-foreground/20"></div>
             </div>
             
             <div class="space-y-8">
-              <p class="text-lg font-light text-foreground leading-relaxed">
-                You'll see exactly what's constraining your progress, then get proven frameworks to design something that actually fits your reality. You get the clarity you need to make informed decisions - no ongoing consulting dependency.
+              <p class="text-lg font-light text-foreground/70 leading-relaxed">
+                We provide strategic intelligence briefings that reveal exactly what's constraining your autonomy, plus actionable frameworks to regain control.
               </p>
-              <p class="text-lg font-light text-foreground leading-relaxed">
-                You receive detailed intelligence reports plus proven frameworks adapted specifically for your situation.
+              <p class="text-lg font-light text-foreground/70 leading-relaxed">
+                You receive clear intelligence analysis that identifies what went off-rails and frameworks to guide your business redesign.
               </p>
-              <p class="text-lg font-light text-foreground leading-relaxed">
-                <strong class="font-normal">Think category design methodology applied to operational clarity</strong> - whether you're creating a new market position or just need a business model reset that doesn't exhaust you.
+              <p class="text-lg font-light text-foreground/70 leading-relaxed">
+                <strong class="font-normal">Think category design methodology applied to life-business alignment</strong> - revealing the core problems so you can architect solutions that serve your evolution.
               </p>
             </div>
           </div>
         </div>
         
-        <div class="lg:col-span-5 lg:col-start-8">
+        <div class="md:col-span-5 md:col-start-8 lg:col-span-5 lg:col-start-8">
           <div class="space-y-16 transform transition-all duration-1000 delay-300" data-animate="bai-framework">
             <div class="space-y-8">
               <h3 class="text-xl font-light text-foreground">Intelligence Framework</h3>
@@ -164,7 +290,7 @@ const baiMethodology = [
                     CULTURAL INTELLIGENCE
                   </div>
                   <p class="text-sm font-light text-foreground leading-relaxed">
-                    We analyze how industry standards and team dynamics are creating hidden constraints on your decision-making and operational freedom.
+                    We analyze how industry expectations and team dynamics constrain your ability to operate according to your actual life priorities and capabilities.
                   </p>
                 </div>
                 
@@ -173,7 +299,7 @@ const baiMethodology = [
                     HUMAN INTELLIGENCE
                   </div>
                   <p class="text-sm font-light text-foreground leading-relaxed">
-                    We map how relationships, stakeholder expectations, and communication patterns are limiting your ability to operate according to your actual capabilities.
+                    We map how relationships, stakeholder expectations, and communication patterns need to evolve to support your new direction.
                   </p>
                 </div>
                 
@@ -182,7 +308,7 @@ const baiMethodology = [
                     BEHAVIORAL INTELLIGENCE
                   </div>
                   <p class="text-sm font-light text-foreground leading-relaxed">
-                    We identify how your current systems trigger stress responses or energy drain, and design approaches that work with your natural patterns instead of fighting them.
+                    We identify how current systems trigger stress or energy drain, and design approaches that work with your natural patterns and current life requirements.
                   </p>
                 </div>
               </div>
@@ -193,34 +319,93 @@ const baiMethodology = [
     </div>
   </section>
 
-  <!-- Process Timeline -->
-  <div data-animate="timeline">
-    <Timeline 
-      title="From Constraint to Clarity"
-      events={process}
-    />
-  </div>
   
-  <!-- Strategic CTA -->
-  <section class="py-32 lg:py-40">
-    <div class="max-w-7xl mx-auto px-8 lg:px-12">
+  <!-- About GenZen Methodology Section -->
+  <section class="py-16 md:py-24 lg:py-32 xl:py-40 bg-foreground/5">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
       <div class="grid grid-cols-12 gap-16">
-        <div class="col-span-12 lg:col-span-5 transform transition-all duration-1000" data-animate="cta-left">
-          <h2 class="text-4xl md:text-5xl font-light leading-tight tracking-tight text-foreground mb-8">
-            Something's Driving Your Business Instead of You
-          </h2>
-          <p class="text-lg font-light text-foreground/70 leading-relaxed">
-            You sense it but can't name it. Decisions that should be yours aren't. Systems that should protect you have become hindrances to progress.
-          </p>
+        <div class="col-span-12 lg:col-span-6">
+          <div class="space-y-12 transform transition-all duration-1000" data-animate="genzen-left">
+            <div class="space-y-8">
+              <h2 class="text-4xl md:text-5xl font-light leading-[1.3] tracking-tight heading-relaxed text-foreground">
+                About GenZen's Methodology
+              </h2>
+              <div class="w-12 h-px bg-foreground/20"></div>
+            </div>
+            
+            <div class="space-y-8">
+              <p class="text-lg font-light text-foreground/70 leading-relaxed">
+                GenZen operates as an <strong class="font-normal">Autonomy Intelligence agency</strong>, specializing in pattern recognition and threat transformation across Personal Autonomy, Professional Autonomy, and Generational Autonomy.
+              </p>
+              <p class="text-lg font-light text-foreground/70 leading-relaxed">
+                <strong class="font-normal">Business Autonomy Intelligence</strong> applies this proven methodology to life transitions that reveal business system misalignment.
+              </p>
+              <p class="text-lg font-light text-foreground/70 leading-relaxed">
+                The same pattern recognition that protects family legacies and restores executive authority now serves business owners whose life evolution requires business evolution.
+              </p>
+            </div>
+          </div>
         </div>
         
-        <div class="col-span-12 lg:col-span-6 lg:col-start-7 lg:pt-16 transform transition-all duration-1000 delay-200" data-animate="cta-right">
+        <div class="col-span-12 lg:col-span-5 lg:col-start-8">
+          <div class="space-y-16 transform transition-all duration-1000 delay-300" data-animate="genzen-right">
+            <div class="space-y-8 group p-6 rounded-lg hover:bg-foreground/5 transition-all duration-500" data-animate="genzen-track-record">
+              <h3 class="text-xl font-light text-foreground group-hover:text-custom-navy transition-colors duration-300">Track Record</h3>
+              <div class="space-y-6">
+                <p class="text-base font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  We've applied these intelligence frameworks to prevent multimillion-dollar losses, guide complex negotiations, and restore autonomy for individuals facing systematic exploitation.
+                </p>
+                <p class="text-base font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  This includes situations where traditional consulting approaches have failed.
+                </p>
+              </div>
+            </div>
+            
+            <div class="space-y-8 pt-8 border-t border-foreground/10 group p-6 rounded-lg hover:bg-foreground/5 transition-all duration-500" data-animate="genzen-business-owners">
+              <h3 class="text-xl font-light text-foreground group-hover:text-custom-navy transition-colors duration-300">For Business Owners</h3>
+              <div class="space-y-4">
+                <p class="text-base font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  Whose life changes have revealed business system misalignment.
+                </p>
+                <p class="text-base font-light text-foreground/70 leading-relaxed group-hover:text-foreground transition-colors duration-300">
+                  You sense the misalignment but can't architect the solution. The business that once served your goals now controls your choices.
+                </p>
+                <div class="transform group-hover:scale-105 transition-transform duration-300">
+                  <p class="text-lg font-light text-foreground tracking-tight group-hover:text-custom-navy transition-colors duration-300">
+                    <strong class="font-normal">We'll identify exactly what needs to change for your business to serve your life again.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Strategic CTA -->
+  <section class="py-16 md:py-24 lg:py-32 xl:py-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <div class="grid grid-cols-12 gap-16">
+        <div class="col-span-12 lg:col-span-5 transform transition-all duration-1000" data-animate="cta-left">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-foreground mb-6 cta-heading-relaxed">
+            Something's Changed<br/>
+            in Your Life—<br/>
+            But Your Business Hasn't
+          </h2>
+        </div>
+        
+        <div class="col-span-12 lg:col-span-6 lg:col-start-7 lg:py-8 transform transition-all duration-1000 delay-200" data-animate="cta-right">
           <div class="space-y-8">
             <p class="text-lg font-light text-foreground/70 leading-relaxed">
-              We expose the specific patterns that are systematically eroding your operational control - then show you how to transform them into strategic advantages.
+              You sense the misalignment but can't architect the solution.
             </p>
-            <p class="text-lg font-light text-foreground leading-relaxed transform transition-all duration-800 delay-600" data-animate="cta-promise">
-              <strong class="font-normal">In less than an hour, we'll identify exactly what's turning your own infrastructure against you.</strong>
+            <p class="text-lg font-light text-foreground/70 leading-relaxed">
+              We'll identify exactly what needs to change for your business to serve your life again.
+            </p>
+            <p class="text-lg font-light text-foreground/70 leading-relaxed transform transition-all duration-800 delay-600" data-animate="cta-promise">
+              <strong class="font-normal">This isn't traditional business consulting. It's pattern recognition that reveals what others miss.</strong>
             </p>
             <div class="transform transition-all duration-500 delay-800" data-animate="cta-button">
               <a href="#contact">
@@ -229,7 +414,7 @@ const baiMethodology = [
                   size="lg"
                   className="font-light border-foreground/20 hover:border-foreground/40 text-lg hover:scale-105 transition-transform duration-300"
                 >
-                  Apply For Your Analysis Session
+                  Redesign What's Not Working
                 </Button>
               </a>
             </div>
@@ -256,7 +441,7 @@ const baiMethodology = [
       const animatedElements = document.querySelectorAll('[data-animate]');
       console.log('Found animated elements:', animatedElements.length);
       
-      animatedElements.forEach((element) => {
+      animatedElements.forEach((element, index) => {
         // Set transition properties first
         element.style.transition = 'all 1.2s ease-out';
         
@@ -301,12 +486,22 @@ const baiMethodology = [
               }, 200);
               
             } else {
-              // Standard animations for other elements
-              if (animationName.includes('right') || animationName.includes('framework')) {
+              // Progressive delays for item animations
+              if (animationName.includes('autonomy-item-')) {
+                const itemNumber = parseInt(animationName.split('-').pop());
+                delay = 100 + (itemNumber * 100);
+              } else if (animationName.includes('pattern-item-')) {
+                const itemNumber = parseInt(animationName.split('-').pop());
+                delay = 200 + (itemNumber * 150);
+              } else if (animationName.includes('genzen-track-record')) {
+                delay = 100;
+              } else if (animationName.includes('genzen-business-owners')) {
+                delay = 300;
+              } else if (animationName.includes('right') || animationName.includes('framework') || animationName.includes('autonomy-right') || animationName.includes('inversion-right') || animationName.includes('genzen-right')) {
                 delay = 200;
-              } else if (animationName.includes('callout') || animationName.includes('promise')) {
+              } else if (animationName.includes('callout') || animationName.includes('promise') || animationName.includes('inversion-callout')) {
                 delay = 400;
-              } else if (animationName.includes('button')) {
+              } else if (animationName.includes('button') || animationName.includes('pattern-steps')) {
                 delay = 600;
               }
               

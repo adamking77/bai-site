@@ -13,42 +13,64 @@ const questions = [
     name: 'name',
   },
   {
+    question: 'What is your company/organization?',
+    type: 'text',
+    name: 'company',
+  },
+  {
     question: 'What is your email?',
     type: 'email',
     name: 'email',
   },
   {
-    question: 'What is your company name?',
+    question: 'What is your phone number?',
     type: 'text',
-    name: 'company',
+    name: 'phone',
   },
   {
-    question: 'What is your role at the company?',
-    type: 'text',
-    name: 'role',
-  },
-  {
-    question: 'What is your company size?',
+    question: 'What is the best time for calls?',
     type: 'select',
-    name: 'companySize',
-    options: ['1-10', '11-50', '51-200', '201-500', '500+'],
+    name: 'bestTime',
+    options: ['Morning (9am-12pm)', 'Afternoon (12pm-5pm)', 'Evening (5pm-8pm)', 'Flexible/Any time'],
   },
   {
-    question: 'What is your project budget?',
-    type: 'select',
-    name: 'budget',
-    options: ['$10k-$25k', '$25k-$50k', '$50k-$100k', '$100k+'],
+    question: 'What significant life change is driving your need to rethink your business approach?',
+    type: 'textarea',
+    name: 'lifeChange',
+    placeholder: 'Examples: relationship change, health shift, family transition, lifestyle evolution, geographic move',
   },
   {
-    question: 'What is your project timeline?',
+    question: 'How do your current business systems conflict with your new life priorities or capabilities?',
+    type: 'textarea',
+    name: 'systemConflict',
+  },
+  {
+    question: 'What aspects of your business feel most misaligned with who you\'re becoming or what you now need from your work?',
+    type: 'textarea',
+    name: 'misalignment',
+  },
+  {
+    question: 'Who are the key people affected by potential changes to how you operate?',
+    type: 'textarea',
+    name: 'keyPeople',
+    placeholder: 'Examples: team, partners, family, clients',
+  },
+  {
+    question: 'What would business autonomy look like in your new life context?',
+    type: 'textarea',
+    name: 'autonomyVision',
+  },
+  {
+    question: 'How quickly do you need to implement changes?',
     type: 'select',
     name: 'timeline',
-    options: ['1-3 months', '3-6 months', '6-12 months', '12+ months'],
+    options: ['Immediate', 'Near-term (1-3 months)', 'Strategic (3-6 months)', 'Flexible timing'],
   },
   {
-    question: 'Tell us about your project',
-    type: 'textarea',
-    name: 'projectDetails',
+    question: 'Do you have capacity to implement changes if we provide intelligence and frameworks for business redesign?',
+    type: 'select',
+    name: 'implementationCapacity',
+    options: ['Yes', 'Partially', 'No', 'Uncertain'],
   },
 ];
 
@@ -103,11 +125,11 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
         >
           <div className="space-y-8">
             <div className="w-16 h-px bg-foreground/20 mx-auto"></div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light leading-[0.9] text-foreground">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light leading-[1.5] text-foreground">
               Thank You!
             </h1>
             <p className="text-base sm:text-lg font-light leading-relaxed text-foreground/80 max-w-xl mx-auto">
-              Your submission has been received. We will be in touch shortly to discuss your project.
+              Your application has been received. We'll respond within 48 hours to schedule your Strategic Intelligence Call.
             </p>
           </div>
           <div className="pt-8">
@@ -150,13 +172,13 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
                 >
                   <div className="space-y-8">
                     <div className="w-16 h-px bg-foreground/20 mx-auto"></div>
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-light leading-[0.9] text-foreground">
-                      Ready to build something 
-                      <span className="block">great?</span>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-light leading-[1.5] text-foreground">
+                      Strategic Intelligence
+                      <span className="block">Call Application</span>
                     </h1>
                   </div>
                   <p className="text-base sm:text-lg font-light leading-relaxed text-foreground/80 max-w-xl mx-auto">
-                    Let's start with a few questions to understand your needs and create the perfect solution.
+                    We'll analyze your life-business misalignment and determine if Business Autonomy Intelligence frameworks apply to your situation.
                   </p>
                   <Button 
                     onClick={() => setCurrentQuestion(0)}
@@ -164,7 +186,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
                     size="lg"
                     className="font-light text-base px-8 py-3 border-2 border-foreground/30 rounded-full"
                   >
-                    Begin Journey
+                    Begin Application
                   </Button>
                 </motion.div>
               )}
@@ -183,7 +205,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
                         Question {currentQuestion + 1} of {questions.length}
                       </div>
                     </div>
-                    <label htmlFor={questions[currentQuestion].name} className="text-2xl sm:text-3xl md:text-4xl font-light leading-[1.1] text-foreground block">
+                    <label htmlFor={questions[currentQuestion].name} className="text-2xl sm:text-3xl md:text-4xl font-light leading-[1.2] text-foreground block">
                       {questions[currentQuestion].question}
                     </label>
                   </div>
@@ -213,6 +235,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
                         <Textarea
                           id={questions[currentQuestion].name}
                           className="w-full p-4 text-lg font-light min-h-[120px] bg-background border-2 border-foreground/20 rounded-lg focus:border-primary focus:ring-0 transition-all duration-300 resize-none"
+                          placeholder={questions[currentQuestion].placeholder || ''}
                           onChange={(e) => handleChange(questions[currentQuestion].name, e.target.value)}
                           value={answers[questions[currentQuestion].name] || ''}
                           autoFocus
@@ -305,7 +328,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
                   size="lg"
                   className="font-light text-base px-8 py-3 border-2 border-foreground/30 rounded-full"
                 >
-                  Submit Application
+                  Schedule Strategic Intelligence Call
                 </Button>
               )}
             </div>
