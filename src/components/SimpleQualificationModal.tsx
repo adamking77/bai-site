@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import QualificationForm from './QualificationForm';
 import { Button } from './ui/button';
@@ -50,14 +51,14 @@ const SimpleQualificationModal: React.FC<SimpleQualificationModalProps> = ({
       )}
 
       {/* Modal */}
-      <AnimatePresence>
-        {isOpen && (
+      {isOpen && typeof document !== 'undefined' && createPortal(
+        <AnimatePresence>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
             onClick={handleBackdropClick}
           >
             <motion.div
@@ -65,7 +66,7 @@ const SimpleQualificationModal: React.FC<SimpleQualificationModalProps> = ({
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="relative w-full max-w-5xl max-h-[90vh] overflow-hidden bg-background border border-foreground/20 rounded-xl shadow-2xl"
+              className="relative w-full max-w-6xl max-h-[90vh] bg-background border border-foreground/20 rounded-xl shadow-2xl"
             >
               {/* Close Button */}
               <button
@@ -94,8 +95,9 @@ const SimpleQualificationModal: React.FC<SimpleQualificationModalProps> = ({
               </div>
             </motion.div>
           </motion.div>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>,
+        document.body
+      )}
     </>
   );
 };

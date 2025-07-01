@@ -5,6 +5,7 @@ import MinimalList from '../components/sections/MinimalList.astro';
 import DataStory from '../components/sections/DataStory.astro';
 import CTA from '../components/sections/CTA.astro';
 import { Button } from '../components/ui/button.tsx';
+import SimpleQualificationModal from '../components/SimpleQualificationModal.tsx';
 
 const title = 'Business Autonomy Intelligence'; // Updated line heights
 const description = 'When life changes, your business systems need to change with you';
@@ -403,7 +404,7 @@ const baiMethodology = [
   
   <!-- Strategic CTA -->
   <section class="py-16 md:py-24 lg:py-32 xl:py-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 lg:gap-16">
         <div class="lg:col-span-5 transform transition-all duration-1000" data-animate="cta-left">
           <h2 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-tight text-foreground mb-6 cta-heading-relaxed">
@@ -425,15 +426,13 @@ const baiMethodology = [
               <strong class="font-normal">This isn't traditional business consulting. It's pattern recognition that reveals what others miss.</strong>
             </p>
             <div class="transform transition-all duration-500 delay-800" data-animate="cta-button">
-              <a href="#contact">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="font-light border-foreground/20 hover:border-foreground/40 text-lg hover:scale-105 transition-transform duration-300"
-                >
-                  Redesign What's Not Working
-                </Button>
-              </a>
+              <SimpleQualificationModal 
+                triggerText="Redesign What's Not Working"
+                variant="outline"
+                size="lg"
+                className="font-light border-foreground/20 hover:border-foreground/40 text-lg hover:scale-105 transition-transform duration-300"
+                client:load
+              />
             </div>
           </div>
         </div>

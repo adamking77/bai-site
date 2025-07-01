@@ -8,30 +8,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const questions = [
   {
-    question: 'What is your name?',
+    question: 'Name',
     type: 'text',
     name: 'name',
   },
   {
-    question: 'What is your company/organization?',
+    question: 'Company/Organization',
     type: 'text',
     name: 'company',
   },
   {
-    question: 'What is your email?',
+    question: 'Email',
     type: 'email',
     name: 'email',
-  },
-  {
-    question: 'What is your phone number?',
-    type: 'text',
-    name: 'phone',
-  },
-  {
-    question: 'What is the best time for calls?',
-    type: 'select',
-    name: 'bestTime',
-    options: ['Morning (9am-12pm)', 'Afternoon (12pm-5pm)', 'Evening (5pm-8pm)', 'Flexible/Any time'],
   },
   {
     question: 'What significant life change is driving your need to rethink your business approach?',
@@ -64,7 +53,7 @@ const questions = [
     question: 'How quickly do you need to implement changes?',
     type: 'select',
     name: 'timeline',
-    options: ['Immediate', 'Near-term (1-3 months)', 'Strategic (3-6 months)', 'Flexible timing'],
+    options: ['Immediate', 'Near-term', 'Strategic', 'Flexible timing'],
   },
   {
     question: 'Do you have capacity to implement changes if we provide intelligence and frameworks for business redesign?',
@@ -101,15 +90,11 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
   };
 
   const handleSubmit = () => {
-    console.log('Answers:', answers);
+    console.log('BAI Strategic Intelligence Call Application:', answers);
     setSubmitted(true);
     
-    // Auto-close modal after 3 seconds if in modal mode
-    if (onComplete) {
-      setTimeout(() => {
-        onComplete();
-      }, 3000);
-    }
+    // Modal stays open until user manually closes it
+    // User can close by clicking X button or clicking outside modal
   };
 
   const progress = currentQuestion > -1 ? ((currentQuestion + 1) / (questions.length + 1)) * 100 : 0;
@@ -126,11 +111,41 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
           <div className="space-y-8">
             <div className="w-16 h-px bg-foreground/20 mx-auto"></div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light leading-[1.5] text-foreground">
-              Thank You!
+              Next Steps
             </h1>
-            <p className="text-base sm:text-lg font-light leading-relaxed text-foreground/80 max-w-xl mx-auto">
-              Your application has been received. We'll respond within 48 hours to schedule your Strategic Intelligence Call.
-            </p>
+            <div className="space-y-6 max-w-4xl mx-auto text-left">
+              <div>
+                <p className="text-lg font-light leading-relaxed text-foreground/80 mb-2">
+                  <strong className="font-normal">Application Review:</strong> We'll review your application within 48 hours to determine if Business Autonomy Intelligence frameworks apply to your situation.
+                </p>
+              </div>
+              
+              <div>
+                <p className="text-lg font-light leading-relaxed text-foreground/80 mb-2">
+                  <strong className="font-normal">If You Qualify:</strong> You'll receive an acceptance email with a scheduling link to book your Strategic Intelligence Call at your convenience.
+                </p>
+              </div>
+              
+              <div>
+                <p className="text-lg font-light leading-relaxed text-foreground/80 mb-3">
+                  <strong className="font-normal">How to Prepare:</strong>
+                </p>
+                <ul className="text-base font-light leading-relaxed text-foreground/70 space-y-2 ml-6">
+                  <li>• Gather specific examples of how your business systems conflict with your new life priorities</li>
+                  <li>• Identify which industry standards or processes feel most misaligned with your current capabilities</li>
+                  <li>• Be ready to discuss what business autonomy would look like in your new context</li>
+                </ul>
+              </div>
+              
+              <div>
+                <p className="text-lg font-light leading-relaxed text-foreground/80">
+                  <strong className="font-normal">What to Expect:</strong> A 60-90 minute intelligence analysis session where we'll identify the specific patterns creating Ownership Inversion in your situation and determine if our frameworks can provide the strategic clarity you need.
+                </p>
+                <p className="text-base font-light leading-relaxed text-foreground/60 mt-2 italic">
+                  This is pattern recognition work, not a sales presentation.
+                </p>
+              </div>
+            </div>
           </div>
           <div className="pt-8">
             <div className="inline-flex items-center space-x-3 text-sm font-light tracking-widest uppercase text-foreground/60">
@@ -180,6 +195,9 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
                   <p className="text-base sm:text-lg font-light leading-relaxed text-foreground/80 max-w-xl mx-auto">
                     We'll analyze your life-business misalignment and determine if Business Autonomy Intelligence frameworks apply to your situation.
                   </p>
+                  <div className="text-sm font-light text-foreground/60 mt-4">
+                    Response Time: We'll respond within 48 hours to schedule your call.
+                  </div>
                   <Button 
                     onClick={() => setCurrentQuestion(0)}
                     variant="outline"
@@ -246,7 +264,7 @@ const QualificationForm: React.FC<QualificationFormProps> = ({ onComplete, isMod
                           <SelectTrigger className="w-full p-4 text-lg font-light bg-background border-2 border-foreground/20 rounded-lg focus:border-primary focus:ring-0 transition-all duration-300">
                             <SelectValue placeholder="Select an option" className="font-light" />
                           </SelectTrigger>
-                          <SelectContent className="bg-background border border-foreground/20">
+                          <SelectContent className="bg-background border border-foreground/20 z-[10000]">
                             {questions[currentQuestion].options.map((option) => (
                               <SelectItem key={option} value={option} className="text-lg font-light hover:bg-secondary/30 p-3">
                                 {option}
